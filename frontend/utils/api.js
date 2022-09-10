@@ -131,6 +131,13 @@ export async function getPageData({ slug, locale, preview }) {
                       ...FileParts
                     }
                   }
+                  ... on ComponentSectionsBigImage {
+                    id
+                    Image {
+                      ...FileParts
+                    }
+                    BlackBackground
+                  }
                   ... on ComponentSectionsFeatureColumnsGroup {
                     id
                     features {
