@@ -9,8 +9,8 @@ const Video = ({
   controls = true,
   autoPlay = false,
 }) => {
-  const fullVideoUrl = getStrapiMedia(media.url)
-  const fullPosterUrl = getStrapiMedia(poster?.url)
+  const fullVideoUrl = getStrapiMedia(media.data.attributes.url)
+  const fullPosterUrl = getStrapiMedia(poster?.data.attributes.url)
 
   return (
     <video

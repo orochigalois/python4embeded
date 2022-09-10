@@ -207,6 +207,7 @@ export async function getPageData({ slug, locale, preview }) {
                     video {
                       ...FileParts
                     }
+                    BlackBackground
                   }
                   ... on ComponentSectionsRichText {
                     id

@@ -3,7 +3,8 @@
   "info": {
     "name": "LargeVideo",
     "displayName": "Large video",
-    "icon": "play-circle"
+    "icon": "play-circle",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -14,20 +15,24 @@
       "type": "string"
     },
     "video": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "videos"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
+      ]
     },
     "poster": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": false
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "BlackBackground": {
+      "type": "boolean",
+      "default": true
     }
   }
 }
