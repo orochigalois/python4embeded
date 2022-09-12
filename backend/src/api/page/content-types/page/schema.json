@@ -50,7 +50,9 @@
         "sections.rich-text",
         "sections.pricing",
         "sections.lead-form",
-        "sections.big-image"
+        "sections.big-image",
+        "sections.text-image",
+        "sections.contact-form"
       ],
       "pluginOptions": {
         "i18n": {

@@ -138,6 +138,27 @@ export async function getPageData({ slug, locale, preview }) {
                     }
                     BlackBackground
                   }
+                  ... on ComponentSectionsTextImage {
+                    id
+                    Title
+                    Text
+                    BlueButton {
+                        id
+                        newTab
+                        text
+                        url
+                    }
+                    Image {
+                      ...FileParts
+                    }
+                  }
+                  ... on ComponentSectionsContactForm {
+                    id
+                    title
+                    image {
+                      ...FileParts
+                    }
+                  }
                   ... on ComponentSectionsFeatureColumnsGroup {
                     id
                     features {

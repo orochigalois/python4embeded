@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_sections_contact_forms",
+  "info": {
+    "displayName": "Contact form",
+    "icon": "assistive-listening-systems"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

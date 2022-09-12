@@ -1,6 +1,8 @@
 import { useRouter } from "next/router"
 import Hero from "@/components/sections/hero"
 import BigImage from "@/components/sections/big-image"
+import TextImage from "@/components/sections/text-image"
+import ContactForm from "@/components/sections/contact-form"
 import LargeVideo from "@/components/sections/large-video"
 import FeatureColumnsGroup from "@/components/sections/feature-columns-group"
 import FeatureRowsGroup from "@/components/sections/feature-rows-group"
@@ -14,6 +16,8 @@ import LeadForm from "./sections/lead-form"
 const sectionComponents = {
   ComponentSectionsHero: Hero,
   ComponentSectionsBigImage: BigImage,
+  ComponentSectionsTextImage: TextImage,
+  ComponentSectionsContactForm: ContactForm,
   ComponentSectionsLargeVideo: LargeVideo,
   ComponentSectionsFeatureColumnsGroup: FeatureColumnsGroup,
   ComponentSectionsFeatureRowsGroup: FeatureRowsGroup,
