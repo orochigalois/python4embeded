@@ -155,6 +155,11 @@ export async function getPageData({ slug, locale, preview }) {
                   ... on ComponentSectionsContactForm {
                     id
                     title
+                    submitButton {
+                      id
+                      text
+                      type
+                    }
                     image {
                       ...FileParts
                     }

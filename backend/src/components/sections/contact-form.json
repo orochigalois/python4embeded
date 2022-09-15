@@ -2,19 +2,26 @@
   "collectionName": "components_sections_contact_forms",
   "info": {
     "displayName": "Contact form",
-    "icon": "assistive-listening-systems"
+    "icon": "assistive-listening-systems",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "title": {
       "type": "string"
+    },
+    "submitButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "links.button"
     }
   }
 }
