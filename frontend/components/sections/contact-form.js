@@ -3,21 +3,22 @@ import { fetchAPI } from "utils/api"
 import NextImage from "../elements/image"
 import * as yup from "yup"
 import { Formik, Form, Field } from "formik"
-import Button from "../elements/button"
+import BlueButton from "../elements/blue-button"
 
 const ContactForm = ({ data }) => {
   const [loading, setLoading] = useState(false)
+  const [success, setSuccess] = useState(false)
   const ContactSchema = yup.object().shape({
     name: yup.string().required(),
     email: yup.string().email().required(),
   })
   return (
 
-    <section className="flex flex-wrap overflow-hidden max-w-screen-xl w-screen mx-auto py-24 justify-between px-5">
+    <section className="flex flex-wrap overflow-hidden max-w-screen-xl w-screen mx-auto py-24 justify-between px-5 border-t">
 
 
       <div className="w-full overflow-hidden md:w-1/2">
-        <div className="max-w-sm mx-auto">
+        <div className="max-w-sm mx-auto pt-8">
           <NextImage media={data.image} />
         </div>
       </div>
@@ -48,7 +49,7 @@ const ContactForm = ({ data }) => {
               setErrors({ api: err.message })
             }
 
-            alert("done!")
+            setSuccess(true)
 
             setLoading(false)
             setSubmitting(false)
@@ -64,7 +65,7 @@ const ContactForm = ({ data }) => {
                   name="name"
                   placeholder='Name'
                 />
-                <p className="text-red-500 h-12 text-sm mt-1 ml-1 text-left">
+                <p className="text-red-500 h-6 text-sm mt-1 ml-1 text-left">
                   {(errors.name && touched.name && errors.name) || errors.api}
                 </p>
                 <Field
@@ -73,23 +74,24 @@ const ContactForm = ({ data }) => {
                   name="email"
                   placeholder='Email'
                 />
-                <p className="text-red-500 h-12 text-sm mt-1 ml-1 text-left">
+                <p className="text-red-500 h-6 text-sm mt-1 ml-1 text-left">
                   {(errors.email && touched.email && errors.email) || errors.api}
                 </p>
                 <Field
                   name="message"
-                  className="w-full md:w-1/2 text-base focus:outline-none py-3 px-4 border-blue-400 border-2 rounded-md"
+                  className="w-full md:w-1/2 text-base focus:outline-none py-3 px-4 border-blue-400 border-2 rounded-md h-36"
                   as="textarea"
                   placeholder="Message"
                 />
 
-                <Button
-                  className={"block"}
-                  type="submit"
-                  button={data.submitButton}
-                  disabled={isSubmitting}
-                  loading={loading}
-                />
+                <div className="block mt-5">
+                  <BlueButton isButton link={data.button} type="submit" disabled={isSubmitting} loading={loading}>
+                    {data.button.text}
+                  </BlueButton>
+                </div>
+                {
+                  success&&<p className="text-base mt-2">Thanks for your feedback</p>
+                }
               </Form>
 
             </div>

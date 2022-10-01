@@ -155,10 +155,11 @@ export async function getPageData({ slug, locale, preview }) {
                   ... on ComponentSectionsContactForm {
                     id
                     title
-                    submitButton {
+                    button {
                       id
+                      newTab
                       text
-                      type
+                      url
                     }
                     image {
                       ...FileParts
