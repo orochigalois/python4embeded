@@ -152,6 +152,41 @@ export async function getPageData({ slug, locale, preview }) {
                       ...FileParts
                     }
                   }
+                  ... on ComponentSectionsSlider {
+                    id
+                    title
+                    text
+                    button {
+                        id
+                        newTab
+                        text
+                        url
+                    }
+                    slider{
+                      data{
+                        id
+                        attributes {
+                          alternativeText
+                          width
+                          height
+                          mime
+                          url
+                          formats
+                        }
+                      }
+                    }
+                  }
+                  ... on ComponentSectionsAnimation {
+                    id
+                    title
+                    text
+                    image {
+                      ...FileParts
+                    }
+                    background_video {
+                      ...FileParts
+                    }
+                  }
                   ... on ComponentSectionsContactForm {
                     id
                     title

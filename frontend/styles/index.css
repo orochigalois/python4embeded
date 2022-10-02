@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=ABeeZee&display=swap');
 @import "./modules/button.scss";
+@import "./sections/animation.scss";
+@import "./sections/slider.scss";
 
 
 @tailwind base;
@@ -53,4 +55,8 @@ html {
   height: 13px;
   display: inline-block;
   margin-left: 0.5em;
+}
+
+button{
+  outline: none !important;
 }

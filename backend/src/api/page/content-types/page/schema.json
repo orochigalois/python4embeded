@@ -52,7 +52,9 @@
         "sections.lead-form",
         "sections.big-image",
         "sections.text-image",
-        "sections.contact-form"
+        "sections.contact-form",
+        "sections.animation",
+        "sections.slider"
       ],
       "pluginOptions": {
         "i18n": {

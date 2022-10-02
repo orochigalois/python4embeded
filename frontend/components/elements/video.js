@@ -8,6 +8,8 @@ const Video = ({
   className,
   controls = true,
   autoPlay = false,
+  muted = false,
+  loop = false,
 }) => {
   const fullVideoUrl = getStrapiMedia(media.data.attributes.url)
   const fullPosterUrl = getStrapiMedia(poster?.data.attributes.url)
@@ -18,6 +20,8 @@ const Video = ({
       poster={fullPosterUrl}
       controls={controls}
       autoPlay={autoPlay}
+      muted={muted}
+      loop={loop}
     >
       <source src={fullVideoUrl} type={media.mime} />
     </video>

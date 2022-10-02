@@ -2,6 +2,8 @@ import { useRouter } from "next/router"
 import Hero from "@/components/sections/hero"
 import BigImage from "@/components/sections/big-image"
 import TextImage from "@/components/sections/text-image"
+import Animation from "@/components/sections/animation"
+import Slider from "@/components/sections/slider"
 import ContactForm from "@/components/sections/contact-form"
 import LargeVideo from "@/components/sections/large-video"
 import FeatureColumnsGroup from "@/components/sections/feature-columns-group"
@@ -17,6 +19,8 @@ const sectionComponents = {
   ComponentSectionsHero: Hero,
   ComponentSectionsBigImage: BigImage,
   ComponentSectionsTextImage: TextImage,
+  ComponentSectionsAnimation: Animation,
+  ComponentSectionsSlider: Slider,
   ComponentSectionsContactForm: ContactForm,
   ComponentSectionsLargeVideo: LargeVideo,
   ComponentSectionsFeatureColumnsGroup: FeatureColumnsGroup,
