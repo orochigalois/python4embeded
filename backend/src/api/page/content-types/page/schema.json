@@ -41,7 +41,6 @@
     "contentSections": {
       "type": "dynamiczone",
       "components": [
-        "sections.hero",
         "sections.bottom-actions",
         "sections.feature-columns-group",
         "sections.feature-rows-group",
@@ -54,7 +53,8 @@
         "sections.text-image",
         "sections.contact-form",
         "sections.animation",
-        "sections.slider"
+        "sections.slider",
+        "sections.hero"
       ],
       "pluginOptions": {
         "i18n": {

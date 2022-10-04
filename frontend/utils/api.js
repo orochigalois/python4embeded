@@ -117,17 +117,9 @@ export async function getPageData({ slug, locale, preview }) {
                   }
                   ... on ComponentSectionsHero {
                     id
-                    buttons {
-                      id
-                      newTab
-                      text
-                      type
-                      url
-                    }
                     title
-                    description
-                    label
-                    picture {
+                    text
+                    image {
                       ...FileParts
                     }
                   }

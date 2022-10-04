@@ -13,7 +13,7 @@ const Animation = ({ data }) => {
         muted={true}
         loop={true}
       />
-      <div className="max-w-5xl flex flex-wrap overflow-hidden justify-between m-auto animation-content">
+      <div className="max-w-7xl flex flex-wrap overflow-hidden justify-between m-auto animation-content">
         <div className="w-full overflow-hidden">
           <h2 className="title text-center mb-20 text-white">{data.title}</h2>
         </div>

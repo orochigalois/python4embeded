@@ -5,7 +5,7 @@ import BlueButton from "../elements/blue-button"
 const TextImage = ({ data }) => {
   return (
 
-    <section className="flex flex-wrap overflow-hidden max-w-screen-xl mx-auto py-24 justify-between px-5">
+    <section className="flex flex-wrap overflow-hidden max-w-7xl mx-auto py-24 justify-between px-5">
       <div className="w-full overflow-hidden">
         <h2 className="title text-center mb-20">{data.Title}</h2>
       </div>

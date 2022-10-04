@@ -3,7 +3,7 @@ import Image from "next/image"
 import PropTypes from "prop-types"
 import { mediaPropTypes } from "utils/types"
 
-const NextImage = ({ media, ...props }) => {
+const NextImage = ({ media, className, ...props }) => {
   const { url, alternativeText, width, height } = media.data.attributes
 
   const loader = ({ src, width }) => {
@@ -13,7 +13,7 @@ const NextImage = ({ media, ...props }) => {
   // The image has a fixed width and height
   if (props.width && props.height) {
     return (
-      <Image loader={loader} src={url} alt={alternativeText || ""} {...props} />
+      <Image loader={loader} className={className} src={url} alt={alternativeText || ""} {...props} />
     )
   }
 

@@ -2,6 +2,7 @@
 @import "./modules/button.scss";
 @import "./sections/animation.scss";
 @import "./sections/slider.scss";
+@import "./sections/hero.scss";
 
 
 @tailwind base;

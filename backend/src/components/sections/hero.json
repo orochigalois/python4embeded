@@ -1,36 +1,23 @@
 {
-  "collectionName": "components_slices_heroes",
+  "collectionName": "components_sections_heroes",
   "info": {
-    "name": "Hero",
     "displayName": "Hero",
-    "icon": "heading"
+    "icon": "allergies"
   },
   "options": {},
   "attributes": {
     "title": {
       "type": "string"
     },
-    "label": {
-      "type": "string"
+    "text": {
+      "type": "richtext"
     },
-    "description": {
-      "type": "string"
-    },
-    "picture": {
+    "image": {
       "allowedTypes": [
         "images"
       ],
       "type": "media",
-      "multiple": false,
-      "required": false
-    },
-    "smallTextWithLink": {
-      "type": "richtext"
-    },
-    "buttons": {
-      "type": "component",
-      "repeatable": true,
-      "component": "links.button-link"
+      "multiple": false
     }
   }
 }

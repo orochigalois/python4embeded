@@ -14,7 +14,7 @@ const ContactForm = ({ data }) => {
   })
   return (
 
-    <section className="flex flex-wrap overflow-hidden max-w-screen-xl w-screen mx-auto py-24 justify-between px-5 border-t">
+    <section className="flex flex-wrap overflow-hidden max-w-7xl w-screen mx-auto py-24 justify-between px-5 border-t">
 
 
       <div className="w-full overflow-hidden md:w-1/2">
