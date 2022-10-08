@@ -19,21 +19,21 @@ const Navbar = ({ navbar, pageContext }) => {
   return (
     <>
       {/* The actual navbar */}
-      <nav className="border-gray-200 border-b-2 py-6 sm:py-2">
-        <div className="container flex flex-row items-center justify-between">
+      <nav className="py-6 sm:py-2 bg-black ">
+        <div className="container flex flex-row items-center justify-between max-w-7xl m-auto px-5">
           {/* Content aligned to the left */}
           <div className="flex flex-row items-center">
             <Link href="/">
-              <a className="h-8 w-32">
-                <NextImage width="120" height="33" media={navbar.logo} />
+              <a className="h-auto w-72 xl:w-96">
+                <NextImage className={"w-96"} media={navbar.logo} />
               </a>
             </Link>
             {/* List of links on desktop */}
-            <ul className="hidden list-none md:flex flex-row gap-4 items-baseline ml-10">
+            <ul className="hidden list-none lg:flex flex-row gap-4 items-baseline ml-0 xl:ml-20">
               {navbar.links.map((navLink) => (
                 <li key={navLink.id}>
                   <CustomLink link={navLink} locale={router.locale}>
-                    <div className="hover:text-gray-900 px-2 py-1">
+                    <div className="hover:underline px-2 py-1 text-white">
                       {navLink.text}
                     </div>
                   </CustomLink>
@@ -44,21 +44,29 @@ const Navbar = ({ navbar, pageContext }) => {
           <div className="flex">
             {/* Locale Switch Mobile */}
             {pageContext.localizedPaths && (
-              <div className="md:hidden">
+              <div className="lg:hidden">
                 <LocaleSwitch pageContext={pageContext} />
               </div>
             )}
             {/* Hamburger menu on mobile */}
             <button
               onClick={() => setMobileMenuIsShown(true)}
-              className="p-1 block md:hidden"
+              className="p-1 block lg:hidden"
             >
-              <MdMenu className="h-8 w-auto" />
+              <MdMenu className="h-8 w-auto text-white" />
             </button>
             {/* CTA button on desktop */}
             {navbar.button && (
-              <div className="hidden md:block">
+              <div className="hidden lg:block">
                 <ButtonLink
+                  onClick={(e) => {
+                    if(navbar.button.url.startsWith('#')){
+                      e.preventDefault();
+                      let destSection=navbar.button.url.substring(1);
+                      let $destSection = document.getElementById(destSection);
+                      $destSection && $destSection.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }
+                  }}
                   button={navbar.button}
                   appearance={getButtonAppearance(navbar.button.type, "light")}
                   compact
@@ -67,7 +75,7 @@ const Navbar = ({ navbar, pageContext }) => {
             )}
             {/* Locale Switch Desktop */}
             {pageContext.localizedPaths && (
-              <div className="hidden md:block">
+              <div className="hidden lg:block">
                 <LocaleSwitch pageContext={pageContext} />
               </div>
             )}

@@ -8,6 +8,7 @@ import { MdExpandMore } from "react-icons/md"
 import WorldIcon from "./icons/world"
 
 import { useOnClickOutside } from "../utils/hooks"
+import { getLocalizedPage } from "../utils/localize"
 
 const LocaleSwitch = ({ pageContext }) => {
   const isMounted = useRef(false)
@@ -21,6 +22,20 @@ const LocaleSwitch = ({ pageContext }) => {
     // https://nextjs.org/docs/advanced-features/i18n-routing#leveraging-the-next_locale-cookie
     Cookies.set("NEXT_LOCALE", selectedLocale)
     setLocale(selectedLocale)
+  }
+
+  const beautifyLocale= (locale) => { 
+    switch (locale) {
+      case "en":
+        return "English";
+        break;
+      case "zh-CN":
+        return "中文";
+        break;
+      default:
+        return "English";
+        break;
+    }
   }
 
   const handleLocaleChangeRef = useRef(handleLocaleChange)
@@ -59,15 +74,15 @@ const LocaleSwitch = ({ pageContext }) => {
   }, [locale, router, pageContext])
 
   return (
-    <div ref={select} className="relative ml-4 ">
+    <div ref={select} className="relative ml-8 z-20">
       <button
         type="button"
-        className="hover:bg-primary-50 hover:text-primary-600 focus:bg-primary-50 focus:text-primary-600 focus:outline-none flex items-center justify-between px-2 py-2 cursor-pointer h-full rounded-md w-20"
+        className="hover:bg-blue-600 hover:text-white focus:bg-blue-600 focus:text-white focus:outline-none flex items-center justify-between px-2 py-2 cursor-pointer h-full rounded-md w-32"
         onClick={() => setShowing(!showing)}
       >
         <WorldIcon />
-        <span className="capitalize">{locale}</span>
-        <MdExpandMore className="ml-1 text-primary-600" />
+        <span className="text-white capitalize">{beautifyLocale(locale)}</span>
+        <MdExpandMore className="ml-1 text-white" />
       </button>
       <div
         className={`w-full bg-white p-1 mt-1 shadow-lg rounded-md ${
@@ -86,9 +101,9 @@ const LocaleSwitch = ({ pageContext }) => {
               >
                 <p
                   onClick={() => handleLocaleChange(locale)}
-                  className="capitalize hover:bg-primary-50 hover:text-primary-600  cursor-pointer p-2 rounded-md text-center hover:text-primary-600"
+                  className="capitalize hover:bg-blue-600 hover:text-white cursor-pointer p-2 rounded-md text-center text-blue-600"
                 >
-                  {locale}
+                  {beautifyLocale(locale)}
                 </p>
               </Link>
             )

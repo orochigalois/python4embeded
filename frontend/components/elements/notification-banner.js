@@ -16,7 +16,7 @@ const NotificationBanner = ({ data: { text, type }, closeSelf }) => {
         }
       )}
     >
-      <div className="container flex flex-row justify-between items-center ">
+      <div className="container flex flex-row justify-between items-center max-w-7xl m-auto px-5">
         <div className="rich-text-banner flex-1">
           <Markdown>{text}</Markdown>
         </div>

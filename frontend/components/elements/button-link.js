@@ -3,9 +3,10 @@ import PropTypes from "prop-types"
 import { buttonLinkPropTypes } from "utils/types"
 import CustomLink from "./custom-link"
 
-const ButtonContent = ({ button, appearance, compact }) => {
+const ButtonContent = ({ button, appearance, compact, onClick}) => {
   return (
     <div
+      onClick={onClick}
       className={classNames(
         // Common classes
         "block w-full lg:w-auto text-center uppercase tracking-wide font-semibold text-base md:text-sm border-2 rounded-md",
@@ -19,15 +20,15 @@ const ButtonContent = ({ button, appearance, compact }) => {
         },
         // Specific to when the button is fully dark
         {
-          "bg-primary-600 text-white border-primary-600": appearance === "dark",
+          "bg-white text-white border-white": appearance === "dark",
         },
         // Specific to when the button is dark outlines
         {
-          "text-primary-600 border-primary-600": appearance === "dark-outline",
+          "text-white border-white": appearance === "dark-outline",
         },
         // Specific to when the button is fully white
         {
-          "bg-white text-primary-600 border-white": appearance === "white",
+          "bg-white text-white border-white": appearance === "white",
         },
         // Specific to when the button is white outlines
         {
@@ -40,13 +41,14 @@ const ButtonContent = ({ button, appearance, compact }) => {
   )
 }
 
-const ButtonLink = ({ button, appearance, compact = false }) => {
+const ButtonLink = ({ button, appearance, compact = false ,onClick}) => {
   return (
     <CustomLink link={button}>
       <ButtonContent
         button={button}
         appearance={appearance}
         compact={compact}
+        onClick={onClick}
       />
     </CustomLink>
   )

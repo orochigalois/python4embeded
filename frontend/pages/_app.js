@@ -24,6 +24,7 @@ const MyApp = ({ Component, pageProps }) => {
           rel="shortcut icon"
           href={getStrapiMedia(favicon.data.attributes.url)}
         />
+        {/* <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"></meta> */}
       </Head>
       {/* Global site metadata */}
       <DefaultSeo

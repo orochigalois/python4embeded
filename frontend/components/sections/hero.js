@@ -10,7 +10,7 @@ const Hero = ({ data }) => {
           <h2 className="title mb-20 text-white">{data.title}</h2>
         </div>
 
-        <div className="w-full overflow-hidden md:w-1/2 md:max-w-md mb-10 md:mb-0 text-white text-lg relative z-10">
+        <div className="w-full overflow-hidden md:w-1/2 md:max-w-2xl mb-10 md:mb-0 text-white text-lg relative z-10">
           <Markdown>{data.text}</Markdown>
         </div>
 
