@@ -8,9 +8,11 @@ const Footer = ({ footer }) => {
     <footer className="pt-12 bg-gray-100">
       <div className="container flex flex-col lg:flex-row lg:justify-between">
         <div>
-          {footer.logo && (
-            <NextImage width="120" height="33" media={footer.logo} />
-          )}
+          <a href="/">
+            {footer.logo && (
+              <NextImage width="262" height="60" media={footer.logo} />
+            )}
+          </a>
         </div>
         <nav className="flex flex-wrap flex-row lg:gap-20 items-start lg:justify-end mb-10">
           {footer.columns.map((footerColumn) => (
@@ -35,7 +37,7 @@ const Footer = ({ footer }) => {
           ))}
         </nav>
       </div>
-      <div className="text-sm bg-gray-200 py-6 text-gray-700">
+      <div className="text-sm bg-black py-6 text-white">
         <div className="container">{footer.smallText}</div>
       </div>
     </footer>

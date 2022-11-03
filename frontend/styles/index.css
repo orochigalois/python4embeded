@@ -14,6 +14,7 @@
 
 html {
   font-size: 13px;
+  overflow-x:hidden;
   @apply text-gray-900;
 }
 

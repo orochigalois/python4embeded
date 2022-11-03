@@ -32,7 +32,7 @@ const NextImage = ({ media, className, ...props }) => {
 }
 
 Image.propTypes = {
-  media: mediaPropTypes.isRequired,
+  media: mediaPropTypes,
   className: PropTypes.string,
 }
 

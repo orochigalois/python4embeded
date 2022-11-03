@@ -29,7 +29,7 @@ const Video = ({
 }
 
 Video.propTypes = {
-  media: mediaPropTypes.isRequired,
+  media: mediaPropTypes,
   poster: mediaPropTypes,
   className: PropTypes.string,
   controls: PropTypes.bool,
